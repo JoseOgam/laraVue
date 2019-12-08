@@ -23,3 +23,6 @@ Route::get('/login/{social}', 'Auth\LoginController@socialLogin')->where('social
     'twitter|facebook|linkedin|google|github|bitbucket');
 Route::get('/login/{social}/callback', 'Auth\LoginController@handleProviderCallback')->where('social',
     'twitter|facebook|linkedin|google|github|bitbucket');
+
+
+Route::get('{path}',"HomeController@index")->where( 'path', '([A-z 0-9]+)?' );

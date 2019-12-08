@@ -61,7 +61,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar" style="background-color: #171a1d">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
             <img src="images/pro.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -87,34 +87,46 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
+                    <li class="nav-item">
+                        <router-link to="/dashboard" class="nav-link ">
+                            <i class="nav-icon fas fa-tachometer-alt pink"></i>
+                            <p>dashboard</p>
+                        </router-link>
+                    </li>
                     <li class="nav-item has-treeview menu-open">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <a href="#" class="nav-link ">
+                            <i class="nav-icon fas fa-cog teal"></i>
                             <p>
-                                Starter Pages
-                                <i class="right fas fa-angle-left"></i>
+                                management
+                                <i class="right fas fa-angle-left teal"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Active Page</p>
-                                </a>
+                                <router-link to="/messages" class="nav-link">
+                                    <i class="far fa-envelope nav-icon green"></i>
+                                    <p>messages</p>
+                                </router-link>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Inactive Page</p>
-                                </a>
+                                <router-link to="/events" class="nav-link">
+                                    <i class="far fa-calendar nav-icon blue"></i>
+                                    <p>events</p>
+                                </router-link>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link ">
+                        <router-link to="/users" class="nav-link ">
+                            <i class="nav-icon fas fa-users yellow"></i>
+                            <p> system users</p>
+                        </router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link to="/profile" class="nav-link ">
                             <i class="nav-icon fas fa-user-alt orange"></i>
                             <p>profile</p>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}"
@@ -138,31 +150,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Starter Page</h1>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Starter Page</li>
-                        </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
-        <!-- /.content-header -->
 
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
 
-                <main class="py-4">
-                    @yield('content')
-                </main>
+                <router-view> </router-view>
 
             </div><!-- /.container-fluid -->
         </div>
